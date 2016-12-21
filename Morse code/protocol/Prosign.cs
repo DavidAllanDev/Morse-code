@@ -7,7 +7,23 @@ namespace MorseCode.protocol
     {
         public Dictionary<string, string> GetProsigns()
         {
-            throw new NotImplementedException();
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                {"<AA>","·-·-"},
+                {"<AR>","·-·-·"},
+                {"<AS>","·-···"},
+                {"<BT>","-···-"},
+                {"<CT>","-·-·-"},
+                {"<HH>","........"},
+                {"K","-·-"},
+                {"<KN>","-·--·"},
+                {"<NJ>","-··---"},
+                {"<SK>","···-·-"},
+                {"<SN>","···-·"},
+                {"<SOS>","···---···"},
+                {"BK","-··· -·-"},
+                {"CL","-·-· ·-··"},
+            };
         }
     }
 }
