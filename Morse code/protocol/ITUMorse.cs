@@ -55,7 +55,7 @@ namespace MorseCode.protocol
             };
         }
 
-        public Dictionary<string, string> GetProsigns()
+        public new Dictionary<string, string> GetProsigns()
         {
             return base.GetProsigns();
         }
