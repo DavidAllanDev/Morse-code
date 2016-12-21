@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Morse_code.protocol
+namespace MorseCode.protocol
 {
-    public class ITUMorse : IMorseType
+    public class ITUMorse : Prosign,IMorseType
     {
         public Dictionary<string, string> GetAlphabet()
         {
@@ -53,6 +53,11 @@ namespace Morse_code.protocol
                 {"9","— · · —"},
                 {"0","————"},
             };
+        }
+
+        public Dictionary<string, string> GetProsigns()
+        {
+            return base.GetProsigns();
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace Morse_code.protocol
+namespace MorseCode.protocol
 {
     public interface IMorseType
     {
         Dictionary<string, string> GetAlphabet();
         Dictionary<string, string> GetNumeral();
+        Dictionary<string, string> GetProsigns();
     }
 }

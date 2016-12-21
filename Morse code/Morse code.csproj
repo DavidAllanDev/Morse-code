@@ -8,8 +8,8 @@
     <ProjectGuid>{B317E061-B7AA-45F3-A73A-06174005EC3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Morse_code</RootNamespace>
-    <AssemblyName>Morse code</AssemblyName>
+    <RootNamespace>MorseCode</RootNamespace>
+    <AssemblyName>MorseCode</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -44,6 +44,7 @@
     <Compile Include="protocol\GerkeMorse.cs" />
     <Compile Include="protocol\IMorseType.cs" />
     <Compile Include="protocol\ITUMorse.cs" />
+    <Compile Include="protocol\Prosign.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
