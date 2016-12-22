@@ -12,12 +12,7 @@ namespace MorseCode.text
 
         public string ConvertToMorse(string message)
         {
-            return ToMorseCode(message);
-        }
-
-        public string ToMorseCode(string text)
-        {
-            var charList = text.ToCharArray();
+            var charList = message.ToCharArray();
             return ConvertCharsToMorse(charList);
         }
 
@@ -46,7 +41,7 @@ namespace MorseCode.text
                 return morser.GetProsigns()[item];
             }
             else
-                return "";
+                return item;
         }
     }
 }
