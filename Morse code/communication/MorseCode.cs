@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MorseCode.protocol;
 using MorseCode.text;
 
@@ -20,6 +16,7 @@ namespace MorseCode.communication
         {
             _preservePreserveWeirdChars = PreserveChars;
             _wordSeparetor = Separetor;
+            _morseSepareator = _wordSeparetor;
         }
 
         public bool PreservePreserveWeirdChars
@@ -39,7 +36,7 @@ namespace MorseCode.communication
 
         public string UnMorse(string morse)
         {
-            throw new NotImplementedException();
+            return ConvertFromMorse(morse);
         }
     }
 }
