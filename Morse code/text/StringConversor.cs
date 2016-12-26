@@ -1,10 +1,14 @@
-﻿using MorseCode.protocol;
+﻿using System;
+using System.Linq;
+using MorseCode.protocol;
 
 namespace MorseCode.text
 {
     public class StringConversor
     {
         private IMorseType _morseType;
+        protected string _morseSepareator;
+
         public StringConversor(IMorseType moreseType)
         {
             _morseType = moreseType;
@@ -42,6 +46,17 @@ namespace MorseCode.text
             }
             else
                 return item;
+        }
+
+        internal string ConvertFromMorse(string morse)
+        {
+            var list = morse.Split(Convert.ToChar(_morseSepareator)).Select(n => (n)).ToArray();
+            return ConvertStringFromMorse(list);
+        }
+
+        private string ConvertStringFromMorse(string[] list)
+        {
+            throw new NotImplementedException();
         }
     }
 }
