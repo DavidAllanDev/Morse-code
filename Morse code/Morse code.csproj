@@ -35,9 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="communication\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="communication\IMorseCode.cs" />
+    <Compile Include="communication\MorseCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="protocol\AmericanMorse.cs" />
     <Compile Include="protocol\GerkeMorse.cs" />
