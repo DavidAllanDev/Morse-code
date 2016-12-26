@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MorseCode.protocol;
 using MorseCode.text;
+using Morse = MorseCode.communication.MorseCode;
 
 namespace UnitTestMorse
 {
@@ -11,7 +11,7 @@ namespace UnitTestMorse
         [TestMethod]
         public void CanConvertToMorse()
         {
-            //Arrenge
+            //Arrange
             var morser = new AmericanMorse();
             var conversor = new StringConversor(morser);
             var message = "Hi! My name is David!";
@@ -22,6 +22,22 @@ namespace UnitTestMorse
             //Assert
             Assert.AreNotEqual(morseMessage, null);
             Assert.AreNotEqual(message, morseMessage);
+        }
+
+        [TestMethod]
+        public void CanConvertFromMorse()
+        {
+            //Arrange
+            var morser = new Morse(new AmericanMorse(), PreserveChars: true);
+            var message = "MY NAME IS DAVID";
+
+            //Execute
+            var morseMessage = morser.Morse(message);
+            morseMessage = morser.UnMorse(morseMessage);
+
+            //Assert
+            Assert.AreNotEqual(morseMessage, null);
+            Assert.AreEqual(message, morseMessage);
         }
     }
 }

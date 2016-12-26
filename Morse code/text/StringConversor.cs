@@ -25,7 +25,7 @@ namespace MorseCode.text
             string result = "";
             foreach (char item in values)
             {
-                result = result + GetAMorseFor(item.ToString(), _morseType);
+                result = result + GetAMorseFor(item.ToString(), _morseType)+ _morseSepareator;
             }
             return result;
         }
@@ -56,7 +56,30 @@ namespace MorseCode.text
 
         private string ConvertStringFromMorse(string[] list)
         {
-            throw new NotImplementedException();
+            string result = "";
+            foreach (string item in list)
+            {
+                result = result + GetFromMorse(item.ToString(), _morseType);
+            }
+            return result;
+        }
+
+        private string GetFromMorse(string element, IMorseType morser)
+        {
+            if (morser.GetAlphabet().ContainsValue(element))
+            {
+                return morser.GetAlphabet().FirstOrDefault(x => x.Value == element).Key;
+            }
+            else if (morser.GetNumeral().ContainsValue(element))
+            {
+                return morser.GetNumeral().FirstOrDefault(x => x.Value == element).Key;
+            }
+            else if (morser.GetProsigns().ContainsValue(element))
+            {
+                return morser.GetProsigns().FirstOrDefault(x => x.Value==element).Key;
+            }
+            else
+                return element;
         }
     }
 }

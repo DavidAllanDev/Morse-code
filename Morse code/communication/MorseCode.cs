@@ -1,5 +1,4 @@
-﻿using System;
-using MorseCode.protocol;
+﻿using MorseCode.protocol;
 using MorseCode.text;
 
 namespace MorseCode.communication
