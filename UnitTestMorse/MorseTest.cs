@@ -29,6 +29,7 @@ namespace UnitTestMorse
         {
             //Arrange
             var morser = new Morse(new ITUMorse(), PreserveChars: true);
+            var message = "HAPPY NEW 2017";
 
             //Execute
             var morseMessage = morser.Morse(message);
