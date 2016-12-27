@@ -28,8 +28,7 @@ namespace UnitTestMorse
         public void CanConvertFromMorse()
         {
             //Arrange
-            var morser = new Morse(new AmericanMorse(), PreserveChars: true);
-            var message = "MY NAME IS DAVID";
+            var morser = new Morse(new ITUMorse(), PreserveChars: true);
 
             //Execute
             var morseMessage = morser.Morse(message);
