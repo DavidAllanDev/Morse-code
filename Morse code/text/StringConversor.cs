@@ -40,10 +40,6 @@ namespace MorseCode.text
             {
                 return morser.GetNumeral()[item];
             }
-            else if (morser.GetProsigns().ContainsKey(item))
-            {
-                return morser.GetProsigns()[item];
-            }
             else
                 return item;
         }
@@ -73,10 +69,6 @@ namespace MorseCode.text
             else if (morser.GetNumeral().ContainsValue(element))
             {
                 return morser.GetNumeral().FirstOrDefault(x => x.Value == element).Key;
-            }
-            else if (morser.GetProsigns().ContainsValue(element))
-            {
-                return morser.GetProsigns().FirstOrDefault(x => x.Value==element).Key;
             }
             else
                 return element;
