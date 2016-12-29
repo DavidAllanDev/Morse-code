@@ -45,6 +45,7 @@
     <Compile Include="protocol\IMorseType.cs" />
     <Compile Include="protocol\ITUMorse.cs" />
     <Compile Include="protocol\Prosign.cs" />
+    <Compile Include="text\IStringConversor.cs" />
     <Compile Include="text\StringConversor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

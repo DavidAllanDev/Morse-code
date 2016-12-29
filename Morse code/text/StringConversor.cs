@@ -4,7 +4,7 @@ using MorseCode.protocol;
 
 namespace MorseCode.text
 {
-    public class StringConversor
+    public class StringConversor : IStringConversor
     {
         private IMorseType _morseType;
         protected string _morseSepareator;
@@ -48,7 +48,7 @@ namespace MorseCode.text
                 return item;
         }
 
-        internal string ConvertFromMorse(string morse)
+        public string ConvertFromMorse(string morse)
         {
             var list = morse.Split(Convert.ToChar(_morseSepareator)).Select(n => (n)).ToArray();
             return ConvertStringFromMorse(list);
