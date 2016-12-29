@@ -81,5 +81,10 @@ namespace MorseCode.text
             else
                 return element;
         }
+
+        public bool hasProsigns(string text)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
