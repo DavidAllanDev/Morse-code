@@ -16,8 +16,15 @@ namespace MorseCode.text
 
         public string ConvertToMorse(string message)
         {
+            if (hasProsigns(message))
+                message = GetProsignMoser(message);
             var charList = message.ToCharArray();
             return ConvertCharsToMorse(charList);
+        }
+
+        private string GetProsignMoser(string message)
+        {
+            throw new NotImplementedException();
         }
 
         private string ConvertCharsToMorse(char[] values)
@@ -76,7 +83,7 @@ namespace MorseCode.text
 
         public bool hasProsigns(string text)
         {
-            throw new NotImplementedException();
+            return _morseType.GetProsigns().ContainsKey(text);
         }
     }
 }
