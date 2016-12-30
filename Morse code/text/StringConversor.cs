@@ -98,5 +98,10 @@ namespace MorseCode.text
             }
             return false;
         }
+
+        public bool hasMorseProsigns(string text)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
