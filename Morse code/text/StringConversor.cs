@@ -57,8 +57,16 @@ namespace MorseCode.text
 
         public string ConvertFromMorse(string morse)
         {
+            if (hasMorseProsigns(morse))
+                morse = GetProsignKey(morse);
+
             var list = morse.Split(Convert.ToChar(_morseSepareator)).Select(n => (n)).ToArray();
             return ConvertStringFromMorse(list);
+        }
+
+        private string GetProsignKey(string morse)
+        {
+            throw new NotImplementedException();
         }
 
         private string ConvertStringFromMorse(string[] list)
