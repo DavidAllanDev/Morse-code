@@ -24,7 +24,11 @@ namespace MorseCode.text
 
         private string GetProsignMoser(string message)
         {
-            throw new NotImplementedException();
+            foreach(var item in _morseType.GetProsigns())
+            {
+                message.Replace(item.Key, item.Value);
+            }
+            return message;
         }
 
         private string ConvertCharsToMorse(char[] values)
