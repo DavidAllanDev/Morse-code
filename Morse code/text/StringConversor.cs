@@ -26,7 +26,7 @@ namespace MorseCode.text
         {
             foreach(var item in _morseType.GetProsigns())
             {
-                message.Replace(item.Key, item.Value);
+                message = message.Replace(item.Key, item.Value);
             }
             return message;
         }
@@ -87,7 +87,16 @@ namespace MorseCode.text
 
         public bool hasProsigns(string text)
         {
-            return _morseType.GetProsigns().ContainsKey(text);
+            var list = text.Split(Convert.ToChar(" ")).ToArray();
+
+            foreach (var item in list)
+            {
+                if(_morseType.GetProsigns().ContainsKey(item))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
