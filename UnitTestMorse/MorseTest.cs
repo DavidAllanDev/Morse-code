@@ -39,5 +39,22 @@ namespace UnitTestMorse
             Assert.AreNotEqual(morseMessage, null);
             Assert.AreEqual(message, morseMessage);
         }
+
+        [TestMethod]
+        public void CanConvertToMorseWhitProsigns()
+        {
+            //Arrange
+            var morser = new Morse(new ITUMorse(), PreserveChars: true);
+            var message = "<BT> HAPPY NEW 2017";
+
+            //Execute
+            var morseMessage = morser.Morse(message);
+            morseMessage = morser.UnMorse(morseMessage);
+
+            //Assert
+            Assert.AreNotEqual(morseMessage, null);
+            Assert.AreEqual(message, morseMessage);
+        }
+
     }
 }
