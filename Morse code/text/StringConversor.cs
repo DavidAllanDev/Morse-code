@@ -101,7 +101,16 @@ namespace MorseCode.text
 
         public bool hasMorseProsigns(string text)
         {
-            throw new NotImplementedException();
+            var list = text.Split(Convert.ToChar(" ")).ToArray();
+
+            foreach (var item in list)
+            {
+                if (_morseType.GetProsigns().ContainsValue(item))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
