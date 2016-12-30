@@ -66,7 +66,11 @@ namespace MorseCode.text
 
         private string GetProsignKey(string morse)
         {
-            throw new NotImplementedException();
+            foreach (var item in _morseType.GetProsigns())
+            {
+                morse = morse.Replace(item.Value, item.Key);
+            }
+            return morse;
         }
 
         private string ConvertStringFromMorse(string[] list)
