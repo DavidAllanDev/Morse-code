@@ -17,8 +17,33 @@ namespace MorseCode.text
         public string ConvertToMorse(string message)
         {
             if (hasProsigns(message))
-                message = GetProsignMoser(message);
-            var charList = message.ToCharArray();
+            {
+                return ConvertToMorseWithProsigns(message);
+            }
+
+            return ConvertStringToMorse(message);
+        }
+
+        private string ConvertToMorseWithProsigns(string message)
+        {
+            message = GetProsignMoser(message);
+            var messageList = message.Split(Convert.ToChar(_morseSepareator)).ToArray();
+
+            string morseMessage = "";
+
+            foreach (string line in messageList)
+            {
+                if (hasMorseProsigns(line))
+                    morseMessage = morseMessage + line + _morseSepareator;
+                else
+                    morseMessage = morseMessage + ConvertStringToMorse(line);
+            }
+            return morseMessage;
+        }
+
+        private string ConvertStringToMorse(string line)
+        {
+            var charList = line.ToCharArray();
             return ConvertCharsToMorse(charList);
         }
 
@@ -26,7 +51,7 @@ namespace MorseCode.text
         {
             foreach(var item in _morseType.GetProsigns())
             {
-                message = message.Replace(item.Key, item.Value);
+                message = message.Replace(item.Key, item.Value + _morseSepareator);
             }
             return message;
         }
@@ -113,7 +138,7 @@ namespace MorseCode.text
 
         public bool hasMorseProsigns(string text)
         {
-            var list = text.Split(Convert.ToChar(" ")).ToArray();
+            var list = text.Split(Convert.ToChar(_morseSepareator)).ToArray();
 
             foreach (var item in list)
             {
