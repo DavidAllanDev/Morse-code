@@ -3,7 +3,7 @@
     public interface IMorseCode
     {
         string WordSeparetor { get; }
-        bool PreservePreserveWeirdChars { get; }
+        bool PreserveWeirdChars { get; }
 
         string Morse(string text);
         string UnMorse(string morse);
