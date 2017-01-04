@@ -7,7 +7,7 @@ namespace MorseCode.text
     public class StringConversor : IStringConversor
     {
         private IMorseType _morseType;
-        protected string _morseSepareator;
+        protected string _morseSepareator = "|";
 
         public StringConversor(IMorseType moreseType)
         {
