@@ -6,7 +6,6 @@ namespace MorseCode.communication
     public class MorseCode : StringConversor, IMorseCode
     {
         private bool _preserveWeirdChars = false;
-        private string _wordSeparetor = "|";
 
         public MorseCode(IMorseType moreseType) : base(moreseType) { }
 
@@ -14,8 +13,7 @@ namespace MorseCode.communication
          this(moreseType)
         {
             _preserveWeirdChars = PreserveChars;
-            _wordSeparetor = Separetor;
-            _morseSepareator = _wordSeparetor;
+            _morseSepareator = Separetor;
         }
 
         public bool PreserveWeirdChars
@@ -25,7 +23,7 @@ namespace MorseCode.communication
 
         public string WordSeparetor
         {
-            get { return _wordSeparetor; }
+            get { return _morseSepareator; }
         }
 
         public string Morse(string text)
