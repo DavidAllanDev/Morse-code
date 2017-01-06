@@ -124,11 +124,11 @@ namespace MorseCode.text
 
         public bool hasProsigns(string text)
         {
-            var list = text.Split(Convert.ToChar(" ")).ToArray();
+            var wordList = text.Split(Convert.ToChar(" ")).ToArray();
 
-            foreach (var item in list)
+            foreach (var word in wordList)
             {
-                if(_morseType.GetProsigns().ContainsKey(item))
+                if(_morseType.GetProsigns().ContainsKey(word))
                 {
                     return true;
                 }
@@ -138,11 +138,11 @@ namespace MorseCode.text
 
         public bool hasMorseProsigns(string text)
         {
-            var list = text.Split(Convert.ToChar(_morseSepareator)).ToArray();
+            var letterList = text.Split(Convert.ToChar(_morseSepareator)).ToArray();
 
-            foreach (var item in list)
+            foreach (var letter in letterList)
             {
-                if (_morseType.GetProsigns().ContainsValue(item))
+                if (_morseType.GetProsigns().ContainsValue(letter))
                 {
                     return true;
                 }
