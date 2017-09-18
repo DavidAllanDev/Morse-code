@@ -4,7 +4,7 @@
     {
         string ConvertToMorse(string message);
         string ConvertFromMorse(string morse);
-        bool hasProsigns(string text);
-        bool hasMorseProsigns(string text);
+        bool HasTextProsigns(string text);
+        bool HasMorseProsigns(string text);
     }
 }

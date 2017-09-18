@@ -16,7 +16,7 @@ namespace MorseCode.text
 
         public string ConvertToMorse(string message)
         {
-            if (hasProsigns(message))
+            if (HasTextProsigns(message))
             {
                 return ConvertToMorseWithProsigns(message);
             }
@@ -33,7 +33,7 @@ namespace MorseCode.text
 
             foreach (string line in messageList)
             {
-                if (hasMorseProsigns(line))
+                if (HasMorseProsigns(line))
                     morseMessage = morseMessage + line + _morseSepareator;
                 else
                     morseMessage = morseMessage + ConvertStringToMorse(line);
@@ -82,7 +82,7 @@ namespace MorseCode.text
 
         public string ConvertFromMorse(string morse)
         {
-            if (hasMorseProsigns(morse))
+            if (HasMorseProsigns(morse))
                 morse = GetProsignKey(morse);
 
             var list = morse.Split(Convert.ToChar(_morseSepareator)).Select(n => (n)).ToArray();
@@ -122,7 +122,7 @@ namespace MorseCode.text
                 return element;
         }
 
-        public bool hasProsigns(string text)
+        public bool HasTextProsigns(string text)
         {
             var wordList = text.Split(Convert.ToChar(" ")).ToArray();
 
@@ -136,7 +136,7 @@ namespace MorseCode.text
             return false;
         }
 
-        public bool hasMorseProsigns(string text)
+        public bool HasMorseProsigns(string text)
         {
             var letterList = text.Split(Convert.ToChar(_morseSepareator)).ToArray();
 
