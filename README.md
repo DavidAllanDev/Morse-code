@@ -3,7 +3,7 @@
 #### The idea is to have a project tha can be used to convert simple text into morse code (dashes ans points)
 #### also converto from morse to simple text, it is good to avoid using special chars because it may cause loss of some data
 
-##It also use the concept of Prosings:
+## It also use the concept of Prosings:
 #### Procedure signs or prosigns are shorthand signals used in radio telegraphy procedures, for the purpose of simplifying and 
 #### standardizing communications related to radio operating issues among two or more radio operators. 
 #### They are distinct from general Morse code abbreviations, which consist mainly of brevity codes that convey messages to other parties with greater speed and accuracy.
